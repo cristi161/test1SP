@@ -6,7 +6,19 @@ public class Temperature implements Sensor{
     }
 
     @Override
-    public void checkStatus() {
+    public void printSensors() {
         System.out.println("Temperature status: " + status);
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 }

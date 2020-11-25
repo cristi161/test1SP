@@ -9,7 +9,10 @@ public class Main {
         carInfrastructure.add(new Temperature("not-working"));
         carInfrastructure.add(new Lidar("protection-mode"));
 
-        carInfrastructure.checkStatus();
+        carInfrastructure.printSensors();
+        CarInfrastructureStatistics cis = new CarInfrastructureStatistics();
 
+        carInfrastructure.accept(cis);
+        cis.printSatats();
     }
 }

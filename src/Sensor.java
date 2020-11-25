@@ -1,3 +1,4 @@
 public interface Sensor {
-    void checkStatus();
+    void printSensors();
+    void accept(Visitor visitor);
 }

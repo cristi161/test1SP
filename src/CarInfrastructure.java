@@ -12,11 +12,17 @@ public class CarInfrastructure implements Sensor{
         sensors.add(s);
     }
 
+    public void accept(Visitor visitor) {
+        for (Sensor s : sensors) {
+            s.accept(visitor);
+        }
+    }
+
     @Override
-    public void checkStatus() {
+    public void printSensors() {
         System.out.println("Panel name: " + panelName);
         for (Sensor s : sensors) {
-            s.checkStatus();
+            s.printSensors();
         }
     }
 }
